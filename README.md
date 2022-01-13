@@ -1,359 +1,356 @@
-<h1 align="center">
-  🔥 Simplefolio Ember 🔥
-</h1>
+# Simplefolio ⚡️ [![GitHub](https://img.shields.io/github/license/cobidev/simplefolio?color=blue)](https://github.com/cobidev/simplefolio/blob/master/LICENSE.md) ![GitHub stars](https://img.shields.io/github/stars/cobidev/simplefolio) ![GitHub forks](https://img.shields.io/github/forks/cobidev/simplefolio)
+
+## A minimal portfolio template for Developers!
 
 <h2 align="center">
-  A clean, beautiful and responsive portfolio template for Developers!
+  <img src="https://github.com/cobidev/gatsby-simplefolio/blob/master/examples/example.gif" alt="Simplefolio" width="600px" />
+  <br>
 </h2>
 
-Feel free to use it as-is or customize it as much as you want. I was 
-motivated to create this project after I saw the original 
-[Simplefolio](https://github.com/cobidev/simplefolio) by 
-[Jacobo Martinez](https://github.com/cobidev). He wanted to contribute 
-something useful for the dev community and I support his efforts 100%. 
-Simplefolio Ember is just a recreation of that same portofolio template 
-in Ember.js.
+## Features
+
+⚡️ Modern UI Design + Reveal Animations\
+⚡️ One Page Layout\
+⚡️ Styled with Bootstrap v4.3 + Custom SCSS\
+⚡️ Fully Responsive\
+⚡️ Valid HTML5 & CSS3\
+⚡️ Optimized with Parcel\
+⚡️ Well organized documentation
+
+To view the demo: **[click here](https://the-simplefolio.netlify.app/)**
 
 ---
 
-## Getting Started
+## Why do you need a portfolio? ☝️
 
-See the instructions down below at [Installation](#installation) 
-and [Running / Development](#running-/-development) to get a copy of the 
-project up and running on your local machine for development and 
-testing purposes.
+- Professional way to showcase your work
+- Increases your visibility and online presence
+- Shows you’re more than just a resume
+
+## Getting Started 🚀
+
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+
+### Prerequisites 📋
+
+You'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [NPM](http://npmjs.com)) installed on your computer.
+
+```
+node@v16.4.2 or higher
+npm@7.18.1 or higher
+git@2.30.1 or higher
+```
+
+Also, you can use [Yarn](https://yarnpkg.com/) instead of NPM ☝️
+
+```
+yarn@v1.22.10 or higher
+```
+
+---
+
+## How To Use 🔧
+
+From your command line, first clone Simplefolio:
+
+```bash
+# Clone the repository
+$ git clone https://github.com/cobidev/simplefolio
+
+# Move into the repository
+$ cd simplefolio
+
+# Remove the current origin repository
+$ git remote remove origin
+```
+
+After that, you can install the dependencies either using NPM or Yarn.
+
+Using NPM: Simply run the below commands.
+
+```bash
+# Install dependencies
+$ npm install
+
+# Start the development server
+$ npm start
+```
+
+Using Yarn: Be aware of that you'll need to delete the `package-lock.json` file before executing the below commands.
+
+```bash
+# Install dependencies
+$ yarn
+
+# Start the development server
+$ yarn start
+```
+
+**NOTE**:
+If your run into issues installing the dependencies with NPM, use this below command:
+
+```bash
+# Install dependencies with all permissions
+$ sudo npm install --unsafe-perm=true --allow-root
+```
+
+Once your server has started, go to this url `http://localhost:1234/` to see the portfolio locally. It should look like the below screenshot.
+
+<h2 align="center">
+  <img src="https://github.com/cobidev/gatsby-simplefolio/blob/master/examples/example.png" alt="Simplefolio" width="100%">
+</h2>
 
 ---
 
 ## Template Instructions:
 
-### Step 1
+### Step 1 - STRUCTURE
 
-Go to `/app/index.html` and fill in your site information:  
+Go to `/src/index.html` and put your information, there are 5 sections:
+
+### (1) Hero Section
+
+- On `.hero-title`, put your custom portfolio title.
+- On `.hero-cta`, put your custom button label.
 
 ```html
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-    <!-- Put here your site title -->
-    <title>[Your name here] | Developer</title>
-
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Add some coding keywords below, Ex: (javascript, yourusername, etc) -->
-    <meta name="keywords" content="[username], [name], skill" />
-
-    <!-- Improve your SEO by adding a small descrption of you -->
-    <meta name="description" content="[Your name here] | Developer" />
-
-    ...
-
-  </head>
-  <body>
-
-    ...
-
-  </body>
-</html>
-```
-
-Go to `/app/templates/application.hbs` and fill in your personal and professional information, there are 5 sections:
-
-**Header Section** - Edit the `h1` with ID `#opening-text` and `p` with ID `#opening-paragraph`.
-
-```hbs
-<div id="welcome-section">
+<!-- **** Hero Section **** -->
+<section id="hero" class="jumbotron">
   <div class="container">
-    {{!-- Opening Text --}}
-    {{#scroll-reveal
-      tagName="h1"
-      elementId="opening-text"
-      ...
-    }}
-      Hi, my name is <span class="text-color-main">[YOUR NAME HERE]</span>
-      <span class="block">I'm the Unknown Developer.</span>
-    {{/scroll-reveal}}
-    {{!-- /END Opening Text --}}
-
-    {{!-- Opening Call To Action --}}
-    {{#scroll-reveal
-      tagName="p"
-      elementId="opening-paragraph"
-      ...
-    }}
-      {{jump-scroll
-        class="cta-btn cta-btn--hero"
-        href="#about"
-        text="[CALL TO ACTION]"
-      }}
-    {{/scroll-reveal}}
-    {{!-- /END Call To Action --}}
+    <h1 class="hero-title load-hidden">
+      Hi, my name is <span class="text-color-main">Your Name</span>
+      <br />
+      I'm the Unknown Developer.
+    </h1>
+    <p class="hero-cta load-hidden">
+      <a rel="noreferrer" class="cta-btn cta-btn--hero" href="#about">
+        Know more
+      </a>
+    </p>
   </div>
-</div>
+</section>
+<!-- /END Hero Section -->
 ```
 
-**About Section**
+### (2) About Section
 
-- Edit the `img` src with your profile picture url, your profile picture must live in the `assets/` folder.
-- Edit `p` with class `.mb-8.text-left` with information about you.
-- Lastly and not mandatory, put your resume link in the `a` button that lives inside `about-wrapper__info`.
+- On `<img>` tag, fill the `src` property with your profile picture path, your picture must be located inside `/src/assets/` folder.
+- On `<p>` tag with class name `.about-wrapper__info-text`, include information about you, I recommend to put 2 paragraphs in order to work well and a maximum of 3 paragraphs.
+- On last `<a>` tag, include your CV (.pdf) path on `href` property, your resume CV must be located inside `/src/assets/` folder.
 
-```hbs
-<div class="row about-wrapper">
-  <div class="col-md-6 col-sm-12">
-    {{#scroll-reveal
-      class="about-wrapper__image"
-      ...
-    }}
-      {{!-- Profile image: change path: assets/images/yourpic.jpg --}}
-      <img
-        class="img-fluid rounded shadow-lg"
-        height="auto"
-        width="300px"
-        src="assets/images/profile.png"
-        alt="Profile Image"
-      >
-      {{!-- /END Profile image --}}
-    {{/scroll-reveal}}
-  </div>
-  <div class="col-md-6 col-sm-12">
-    {{#scroll-reveal
-      class="about-wrapper__info"
-      ...
-    }}
-      {{!-- 
-        Profile about-text: I recommend to have no more than 4 blocks 
-        of text
-      --}}
-      <p class="mb-8 text-left">
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-        Excepturi neque, ipsa animi maiores repellendus distinctio
-        aperiam earum.
-      </p>
-      <p class="mb-8 text-left">
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-        Excepturi neque, ipsa animi maiores repellendus distinctio
-        aperiam earum.
-      </p>
-      <p class="mb-8 text-left">
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-        Excepturi neque, ipsa animi maiores repellendus distinctio
-        aperiam earum.
-      
-        {{!-- 
-          Resume Link: Put your external link for resume.
-          If you want you can comment this link
-        --}}
-        <a rel="noopener" target="_blank" class="mt-8 cta-btn cta-btn--resume" href="#!">
-          View Resume
-        </a>
-        {{!-- /END Resume link --}}
-      </p>
-      {{!-- /END Profile about text  --}}
-    {{/scroll-reveal}}
-  </div>
-</div>
-```
-
-**Projects Section**
-
-- Projects are organized in `row` and they live inside `.project-wrapper`.
-- The left-side `col` contains 4 blocks to fill information such as (`project-title, project-information, project-url, project-repo-url`). Fill in each piece of information!
-- The right-side `col` contains the `img` of the project, set the `href` of your project on the `project-url` `a` tag that holds the `img` and define the `src` path of your project image. The project `img` must live inside the `assets/` folder.
-
-```hbs
-{{!-- Each .row is a project block --}}
-
-<div class="row">
-  <div class="col-lg-4 col-sm-12">
-    {{#scroll-reveal
-      class="project-wrapper__text"
-      ...
-    }}
-      {{!-- 1) project title --}}
-      <h3 class="project-wrapper__text-title">Project Title</h3>
-      {{!-- 2) project info --}}
-      <div>
-        <p class="mb-4">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-          Excepturi neque, ipsa animi maiores repellendus distinctio
-          aperiam earum dolor voluptatum consequatur blanditiis
-          inventore debitis fuga numquam voluptate ex architecto
-          itaque molestiae.
-        </p>
+```html
+<!-- **** About Section **** -->
+<section id="about">
+  <div class="container">
+    <h2 class="section-title load-hidden">About me</h2>
+    <div class="row about-wrapper">
+      <div class="col-md-6 col-sm-12">
+        <div class="about-wrapper__image load-hidden">
+          <img
+            alt="Profile Image"
+            class="img-fluid rounded shadow-lg"
+            height="auto"
+            width="300px"
+            src="assets/profile.jpg"
+            alt="Profile Image"
+          />
+        </div>
       </div>
-      {{!-- 3) project url  --}}
-      <a rel="noopener" target="_blank" class="cta-btn cta-btn--hero" href="#!">
-        See Live
-      </a>
-      {{!-- 4) project repository url --}}
-      <a rel="noopener" target="_blank" class="cta-btn text-color-main" href="#!">
-        Source Code
-      </a>
-    {{/scroll-reveal}}
+      <div class="col-md-6 col-sm-12">
+        <div class="about-wrapper__info load-hidden">
+          <p class="about-wrapper__info-text">
+            This is where you can describe about yourself. The more you describe
+            about yourself, the more chances you can!
+          </p>
+          <p class="about-wrapper__info-text">
+            Extra Information about you! like hobbies and your goals.
+          </p>
+          <span class="d-flex mt-3">
+            <a
+              rel="noreferrer"
+              target="_blank"
+              class="cta-btn cta-btn--resume"
+              href="assets/resume.pdf"
+            >
+              View Resume
+            </a>
+          </span>
+        </div>
+      </div>
+    </div>
   </div>
-
-  {{!-- RIGHT-SIDE --}}
-  <div class="col-lg-8 col-sm-12">
-    {{#scroll-reveal
-      class="project-wrapper__image"
-      ...
-    }}
-      {{!-- 1) project url --}}
-      <a href="#!" rel="noopener" target="_blank">
-        {{#tilt-element
-          class="thumbnail rounded"
-          ...
-        }}
-          {{!-- 2) project image path  --}}
-          <img class="img-fluid" src="assets/images/banner.png" alt="project banner">
-        {{/tilt-element}}
-      </a>
-    {{/scroll-reveal}}
-  </div>
-</div>
-{{!-- /END Project block --}}
+</section>
+<!-- /END About Section -->
 ```
 
-**Contact Section** - Simply change the `p` with class `.contact-wrapper__text` and include some call-to-action message. Lastly change your email `address` on the `href` property.
+### (3) Projects Section
 
-```hbs
-{{#scroll-reveal
-  class="contact-wrapper"
+- Each project lives inside a `row`.
+- On `<h3>` tag with class name `.project-wrapper__text-title`, include your project title.
+- On `<p>` tag with `loremp ipsum` text, include your project description.
+- On first `<a>` tag, put your project url on `href` property.
+- On second `<a>` tag, put your project repository url on `href` property.
+
+---
+
+- Inside `<div>` tag with class name `.project-wrapper__image`, put your project image url on the `src` of the `<img>` and put again your project url in the `href` property of the `<a>` tag.
+- Recommended size for project image (1366 x 767), your project image must be located inside `/src/assets/` folder.
+
+```html
+<!-- **** Projects Section **** -->
+<section id="projects">
   ...
-}}
-  {{!-- 1) Contact Call To Action: change if necessary --}}
-  <p class="mb-4 contact-wrapper__text">
-    [Put here your call to action]
-  </p>
-  {{!-- 2) Contact mail link: change to your work email & change text if necessary --}}
-  <a
-    rel="noopener"
-    target="_blank"
-    class="cta-btn cta-btn--resume"
-    href="mailto:example@email.com"
-  >
-    Button
-  </a>
-{{/scroll-reveal}}
+  <!-- Notice: each .row is a project -->
+  <div class="row">
+    <div class="col-lg-4 col-sm-12">
+      <div class="project-wrapper__text load-hidden">
+        <h3 class="project-wrapper__text-title">Project Title</h3>
+        <div>
+          <p class="mb-4">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi
+            neque, ipsa animi maiores repellendus distinctio aperiam earum dolor
+            voluptatum consequatur blanditiis inventore debitis fuga numquam
+            voluptate ex architecto itaque molestiae.
+          </p>
+        </div>
+        <a
+          rel="noreferrer"
+          target="_blank"
+          class="cta-btn cta-btn--hero"
+          href="#!"
+        >
+          See Live
+        </a>
+        <a
+          rel="noreferrer"
+          target="_blank"
+          class="cta-btn text-color-main"
+          href="#!"
+        >
+          Source Code
+        </a>
+      </div>
+    </div>
+    <div class="col-lg-8 col-sm-12">
+      <div class="project-wrapper__image load-hidden">
+        <a rel="noreferrer" href="#!" target="_blank">
+          <div
+            data-tilt
+            data-tilt-max="4"
+            data-tilt-glare="true"
+            data-tilt-max-glare="0.5"
+            class="thumbnail rounded js-tilt"
+          >
+            <img
+              alt="Project Image"
+              class="img-fluid"
+              src="assets/project.jpg"
+            />
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+  <!-- /END Project -->
+  ...
+</section>
 ```
 
-**Footer Section**
+### (4) Contact Section
 
-- Put your social media link on each `a` links.
-- If you have more social-media accounts, check out the [Font Awesome Addon Docs](https://github.com/FortAwesome/ember-fontawesome) to add more social icons.
-- You can delete or add as many `a` links your want.
+- On `<p>` tag with class name `.contact-wrapper__text`, include some custom call-to-action message.
+- On `<a>` tag, put your email address on `href` property.
 
-```hbs
-{{!-- Social Links --}}
-<div class="social-links">
-  <a href="#!" rel="noopener" target="_blank" aria-label="Follow me on Twitter">
-    {{fa-icon "twitter" class="fa-inverse pointer-events-none" prefix="fab" aria-label="twitter"}}
-  </a>
-  <a href="#!" rel="noopener" target="_blank" aria-label="Follow me on Codepen">
-    {{fa-icon "codepen" class="fa-inverse pointer-events-none" prefix="fab"}}
-  </a>
-  <a href="#!" rel="noopener" target="_blank" aria-label="Follow me on LinkedIn">
-    {{fa-icon "linkedin" class="fa-inverse pointer-events-none" prefix="fab"}}
-  </a>
-  <a href="#!" rel="noopener" target="_blank" aria-label="Follow me on GitHub">
-    {{fa-icon "github" class="fa-inverse pointer-events-none" prefix="fab"}}
-  </a>
-</div>
-{{!-- /END Social Links --}}
+```html
+<!-- **** Contact Section **** -->
+<section id="contact">
+  <div class="container">
+    <h2 class="section-title">Contact</h2>
+    <div class="contact-wrapper load-hidden">
+      <p class="contact-wrapper__text">[Put your call to action here]</p>
+      <a
+        rel="noreferrer"
+        target="_blank"
+        class="cta-btn cta-btn--resume"
+        href="mailto:example@email.com"
+        >Call to Action</a
+      >
+    </div>
+  </div>
+</section>
+<!-- /END Contact Section -->
 ```
 
-### Step 2
+### (5) Footer Section
 
-Change the color theme of the website ( choose 2 colors to create a gradient ):
+- Put your Social Media URL on each `href` attribute of the `<a>` tags.
+- If you an additional Social Media account different than Twitter, Linkedin or GitHub, then go to [Font Awesome Icons](https://fontawesome.com/v4.7.0/icons/) and search for the icon's class name you are looking.
+- You can delete or add as many `<a>` tags your want.
 
-Go to `app/styles/abstracts/_variables.scss` and only change the values on this classes `$primary-color` and `$secondary-color` to your prefered HEX color
+```html
+<footer class="footer navbar-static-bottom">
+  ...
+  <div class="social-links">
+    <a href="#!" target="_blank">
+      <i class="fa fa-twitter fa-inverse"></i>
+    </a>
+    <a href="#!" target="_blank">
+      <i class="fa fa-linkedin fa-inverse"></i>
+    </a>
+    <a href="#!" target="_blank">
+      <i class="fa fa-github fa-inverse"></i>
+    </a>
+  </div>
+  ...
+</footer>
+```
+
+### Step 2 - STYLES
+
+Change the color theme of the website - (choose 2 colors to create a gradient)
+
+Go to `/src/sass/abstracts/_variables.scss` and only change the values for this variables `$main-color` and `$secondary-color` with your prefered HEX color.
+If you want to get some gradients inspiration I highly recommend you to check this website [UI Gradient](https://uigradients.com/#BrightVault)
 
 ```scss
-// Defaut values
-$primary-color: #02aab0;
+// Default values
+$main-color: #02aab0;
 $secondary-color: #00cdac;
 ```
 
 ---
 
-## Technologies used
+## Deployment 📦
 
-- [Ember.js](https://emberjs.com/) - JavaScript Framework
-- [Bootstrap 4](https://getbootstrap.com/docs/4.3/getting-started/introduction/) - Front-end component library
-- [Tailwind](https://tailwindcss.com/) - Utility-First CSS Framework
+Once you finish your setup. You need to put your website online!
+
+I highly recommend to use [Netlify](https://netlify.com) because it is super easy.
+
+## Others versions 👥
+
+[Gatsby Simplefolio](https://github.com/cobidev/gatsby-simplefolio) by [Jacobo Martinez](https://github.com/cobidev)\
+[Ember.js Simplefolio](https://github.com/sernadesigns/simplefolio-ember) by [Michael Serna](https://github.com/sernadesigns)
+
+## Technologies used 🛠️
+
+- [Parcel](https://parceljs.org/) - Bundler
+- [Bootstrap 4](https://getbootstrap.com/docs/4.3/getting-started/introduction/) - Frontend component library
 - [Sass](https://sass-lang.com/documentation) - CSS extension language
-- [ScrollReveal](https://www.npmjs.com/package/scrollreveal) - JavaScript library
-- [VanillaTilt](https://www.npmjs.com/package/vanilla-tilt) - JavaScript library
-- [Jump.js](https://www.npmjs.com/package/jump.js) - JavaScript library
+- [ScrollReveal.js](https://scrollrevealjs.org/) - JavaScript library
+- [Tilt.js](https://gijsroge.github.io/tilt.js/) - JavaScript tiny parallax library
 
 ## Authors
 
-- **Michael Serna** - [https://github.com/sernadesigns](https://github.com/sernadesigns)
+- **Jacobo Martinez** - [https://github.com/cobidev](https://github.com/cobidev)
 
-## License
+## Status
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/3a029bfd-575c-41e5-8249-c864d482c2e5/deploy-status)](https://app.netlify.com/sites/the-simplefolio/deploys)
+
+## License 📄
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
-## Acknowledgments
+## Acknowledgments 🎁
 
-I was motivated to create this project after seeing the Simplefolio that [Jacobo Martinez](https://github.com/cobimr) created and shared with the [ZTM Community](https://github.com/zero-to-mastery) and [Andrei](https://github.com/aneagoie)
-
-## Prerequisites
-
-You will need the following things properly installed on your computer.
-
-* [Git](https://git-scm.com/)
-* [Node.js](https://nodejs.org/) (with npm)
-* [Ember CLI](https://ember-cli.com/)
-* [Google Chrome](https://google.com/chrome/)
-
-## Installation
-
-* `git clone https://github.com/sernadesigns/simplefolio-ember.git` this repository
-* `cd simplefolio-ember`
-* `npm install`
-
-## Running / Development
-
-* `ember serve`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
-* Visit your tests at [http://localhost:4200/tests](http://localhost:4200/tests).
-
-### Code Generators
-
-Make use of the many generators for code, try `ember help generate` for more details
-
-### Running Tests
-
-* `ember test` to run all tests in CI mode in headless Chrome
-* `npm run test-server` or `ember test --server` to run all tests in the Chrome browser
-* `npm run test-acceptance` to run only acceptance tests
-* `npm run test-integration` to run only integration tests
-* `npm run test-unit` to run only unit tests
-
-### Linting
-
-* `npm run lint:hbs`
-* `npm run lint:js`
-* `npm run lint:js -- --fix`
-
-### Building
-
-* `ember build` (development)
-* `ember build --environment production` (production)
-
-### Deploying
-
-Specify what it takes to deploy your app.
-
-## Further Reading / Useful Links
-
-* [ember.js](https://emberjs.com/)
-* [ember-cli](https://ember-cli.com/)
-* Development Browser Extensions
-  * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
-  * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
+I was motivated to create this project because I wanted to contribute on something useful for the dev community, thanks to [ZTM Community](https://github.com/zero-to-mastery) and [Andrei](https://github.com/aneagoie)
